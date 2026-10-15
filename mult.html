@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Economics Multiplier Calculator | Wellington College Students</title>
+
+    <link rel="stylesheet" href="mult.css">
+</head>
+
+<body>
+
+    <!-- Wellington College header -->
+    <header class="site-header">
+
+        <a href="index.html"
+           class="logo-link"
+           aria-label="Return to the main menu">
+
+            <img
+                src="https://wellingtoncollegehistory.co.uk/wp-content/themes/the-wellington-community/assets/src/img/wellington-college-logo.png"
+                alt="Wellington College logo"
+                class="wellington-logo">
+        </a>
+
+        <div class="header-content">
+            <h1>Economics Multiplier Calculator</h1>
+            <p>Wellington College Students</p>
+        </div>
+
+    </header>
+
+    <main>
+
+        <!-- Calculator introduction -->
+        <section class="panel">
+            <h2>National Income Multiplier</h2>
+
+            <p class="description">
+                Calculate the marginal propensity to withdraw (MPW),
+                the Keynesian multiplier and the resulting rise in
+                national income from an injection into the economy.
+            </p>
+
+            <p class="description">
+                Enter each marginal propensity as a decimal between
+                0 and 1. For example, 20% should be entered as 0.2.
+            </p>
+        </section>
+
+        <!-- Calculator inputs -->
+        <section class="panel">
+            <h2>Enter Your Values</h2>
+
+            <form id="multiplierForm" novalidate>
+
+                <label for="mps">
+                    MPS — Marginal Propensity to Save
+                </label>
+                <input
+                    type="number"
+                    id="mps"
+                    min="0"
+                    max="1"
+                    step="any"
+                    placeholder="e.g. 0.2"
+                    required>
+
+                <label for="mpt">
+                    MPT — Marginal Propensity to Tax
+                </label>
+                <input
+                    type="number"
+                    id="mpt"
+                    min="0"
+                    max="1"
+                    step="any"
+                    placeholder="e.g. 0.1"
+                    required>
+
+                <label for="mpm">
+                    MPM — Marginal Propensity to Import
+                </label>
+                <input
+                    type="number"
+                    id="mpm"
+                    min="0"
+                    max="1"
+                    step="any"
+                    placeholder="e.g. 0.2"
+                    required>
+
+                <label for="injection">
+                    Injection into the Economy (£)
+                </label>
+                <input
+                    type="number"
+                    id="injection"
+                    min="0"
+                    step="any"
+                    placeholder="e.g. 1000000"
+                    required>
+
+                <div class="buttons">
+                    <button type="submit">
+                        Calculate Multiplier
+                    </button>
+
+                    <button type="reset" class="secondary">
+                        Reset
+                    </button>
+                </div>
+
+            </form>
+
+            <p id="error" role="alert" hidden></p>
+        </section>
+
+        <!-- Calculation results -->
+        <section class="panel" id="results" hidden>
+            <h2>Calculation Results</h2>
+
+            <div class="result-card">
+                <h3>Marginal Propensity to Withdraw</h3>
+                <p class="description">
+                    MPW = MPS + MPT + MPM
+                </p>
+                <div class="ped-value" id="mpwResult">—</div>
+            </div>
+
+            <div class="result-card">
+                <h3>Multiplier</h3>
+                <p class="description">
+                    Multiplier = 1 ÷ MPW
+                </p>
+                <div class="ped-value" id="multiplierResult">—</div>
+            </div>
+
+            <div class="result-card">
+                <h3>Initial Injection</h3>
+                <div class="ped-value" id="injectionResult">—</div>
+            </div>
+
+            <div class="result-card">
+                <h3>Rise in National Income</h3>
+                <p class="description">
+                    Change in national income = Multiplier × Injection
+                </p>
+                <div class="ped-value" id="incomeResult">—</div>
+                <p class="result-message" id="incomeMessage"></p>
+            </div>
+        </section>
+
+        <!-- Formula reference guide -->
+        <section class="panel">
+            <h2>Economics Reference Guide</h2>
+
+            <div class="guide-item">
+                <span>Marginal propensity to save</span>
+                <strong>MPS</strong>
+            </div>
+
+            <div class="guide-item">
+                <span>Marginal propensity to tax</span>
+                <strong>MPT</strong>
+            </div>
+
+            <div class="guide-item">
+                <span>Marginal propensity to import</span>
+                <strong>MPM</strong>
+            </div>
+
+            <div class="guide-item">
+                <span>Marginal propensity to withdraw</span>
+                <strong>MPW = MPS + MPT + MPM</strong>
+            </div>
+
+            <div class="guide-item">
+                <span>Multiplier</span>
+                <strong>k = 1 / MPW</strong>
+            </div>
+
+            <div class="guide-item">
+                <span>Change in national income</span>
+                <strong>ΔY = k × Injection</strong>
+            </div>
+        </section>
+
+        <p class="description">
+            <a href="index.html" class="back-link">
+                ← Back to the main menu
+            </a>
+        </p>
+
+    </main>
+
+    <footer>
+        PED Calculator · Calculator By Bennett Tsang (wise.) · Web Development by Vivianna Tsang· For Wellingtonians
+    </footer>
+
+    <script src="mult.js"></script>
+
+</body>
+</html>
