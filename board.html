@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A shared space for paragraphs, notes and files. A fresh start every five days.">
+  <title>Common Room | Shared Notes</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Common Room home"><span class="brand-icon" aria-hidden="true">cr.</span> Common Room</a>
+    <span class="header-label">THE SHARED NOTICEBOARD</span>
+  </header>
+
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow">GOOD IDEAS DESERVE COMPANY</p>
+        <h1 id="page-title">Leave a note.<br>Share a little knowledge.</h1>
+        <p class="intro-text">A space for your paragraphs, revision notes and useful files.<br class="desktop-break"> Add something helpful, or find your next lightbulb moment.</p>
+      </div>
+      <aside class="reset-card" aria-label="Board reset schedule">
+        <span class="reset-tag"><span class="pulse" aria-hidden="true"></span> A FRESH START EVERY 5 DAYS</span>
+        <p class="reset-caption">This board clears in</p>
+        <p id="countdown" class="countdown">—</p>
+        <p id="reset-date" class="reset-date">Connecting to the shared board…</p>
+        <p class="reset-small">All posts and uploads are deleted together. Download anything you want to keep.</p>
+      </aside>
+    </section>
+
+    <div class="workspace">
+      <section class="composer panel" aria-labelledby="compose-title">
+        <p class="eyebrow">PASS IT ON</p>
+        <h2 id="compose-title">Share something</h2>
+        <p class="section-description">A paragraph, a useful resource, a fresh idea.</p>
+        <form id="post-form">
+          <label for="author">Your name <span class="optional">(optional)</span></label>
+          <input id="author" name="author" placeholder="Anonymous" maxlength="60" autocomplete="nickname">
+          <label for="title">Title</label>
+          <input id="title" name="title" placeholder="What would you like to share?" maxlength="100" required>
+          <div class="label-row"><label for="body">Your note <span class="optional">(or attach a file)</span></label><span id="character-count">0 / 5,000</span></div>
+          <textarea id="body" name="body" placeholder="Put your thoughts into words…" rows="7" maxlength="5000"></textarea>
+          <div class="upload-box">
+            <label for="attachment">Attach a file <span class="optional">(optional)</span></label>
+            <input id="attachment" type="file" accept=".pdf,.txt,.md,.csv,.docx,.pptx,.xlsx,.png,.jpg,.jpeg,.webp">
+            <p>PDF, Office documents, text or images · up to 2 MB</p>
+            <button id="remove-file" type="button" class="text-button" hidden>Remove attachment</button>
+          </div>
+          <p class="form-hint">Everyone with access to this website can read and download your post. Names are self-entered.</p>
+          <button id="submit-button" class="primary-button" type="submit">Publish to the board <span aria-hidden="true">↗</span></button>
+          <p id="form-status" class="status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="board" aria-labelledby="board-title">
+        <div class="board-heading"><div><p class="eyebrow">THE COMMUNITY SHELF</p><h2 id="board-title">On the board <span id="post-count" class="count-badge">0</span></h2></div><span id="connection-status" class="connection" role="status">Connecting…</span></div>
+        <div class="board-controls">
+          <div class="tabs" role="group" aria-label="Filter posts">
+            <button class="tab active" type="button" data-filter="all" aria-pressed="true">Everything</button>
+            <button class="tab" type="button" data-filter="notes" aria-pressed="false">Notes</button>
+            <button class="tab" type="button" data-filter="files" aria-pressed="false">Files</button>
+          </div>
+          <label class="search-label"><span class="sr-only">Search notes</span><input id="search" type="search" placeholder="Search the board…" maxlength="100"></label>
+        </div>
+        <p id="board-status" class="status" role="status" aria-live="polite">Loading the board…</p>
+        <div id="posts" class="posts"></div>
+        <div id="empty-state" class="empty-state panel" hidden><span class="empty-icon" aria-hidden="true">✎</span><h3 id="empty-title">A clean page. A new idea.</h3><p id="empty-description">Be the first to share something with the room.</p></div>
+        <p class="board-footnote">Shared with everyone · Updated automatically every 15 seconds</p>
+      </section>
+    </div>
+  </main>
+  <footer><span class="footer-brand">Common Room</span><span>A little knowledge goes a long way.</span></footer>
+  <noscript><p class="noscript">Please enable JavaScript to view and post to the shared board.</p></noscript>
+</body>
+</html>
