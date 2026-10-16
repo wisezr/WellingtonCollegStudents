@@ -1,0 +1,13 @@
+{
+  "name": "wellington-community-board",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Shared notes and uploads with a five-day reset.",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test server.test.cjs"
+  }
+}
