@@ -289,29 +289,11 @@ function drawDemandGraph(progress = 1) {
 function animateGraph() {
     if (animationFrame !== null) {
         cancelAnimationFrame(animationFrame);
+        animationFrame = null;
     }
 
-    const duration = 1200;
-    const startTime = performance.now();
-
-    function frame(now) {
-        const elapsed = Math.min((now - startTime) / duration, 1);
-
-        // Ease-out animation: fast at first, then slows down.
-        const progress = 1 - Math.pow(1 - elapsed, 3);
-
-        drawDemandGraph(progress);
-
-        if (elapsed < 1) {
-            animationFrame = requestAnimationFrame(frame);
-        } else {
-            animationFrame = null;
-        }
-    }
-
-    animationFrame = requestAnimationFrame(frame);
+    drawDemandGraph(1);
 }
-
 // ------------------------------
 // Form submission and validation
 // ------------------------------
